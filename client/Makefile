@@ -2,12 +2,12 @@ all: run
 
 # install requirements
 install:
-	pipenv install;
+	python3 -m pipenv install;
 
 # get venv-activated python shell
 shell:
-	pipenv run python;
+	python3 -m pipenv run python;
 
 # run the client
 run: 
-	pipenv run python ./client.py;
+	python3 -m pipenv run python ./client.py;
