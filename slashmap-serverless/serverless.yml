@@ -1,13 +1,13 @@
 service: slashmap # NOTE: update this with your service name
 
 custom:
-  bucket: slashmap
+  bucket: slashmap-images
 
 provider:
   name: aws
   runtime: python3.6
   stage: dev
-  region: us-east-2
+  region: us-east-1
   tags:
     project: slashmap
     team: innovation
@@ -27,13 +27,13 @@ provider:
       Resource: "*"   
 
 functions:
-  getGroupName:
-    description: takes a jpg file from the post and evaluates if it is an invalid parking image
+  analysis:
+    description: get analysis of jpg file in s3 at provided key location in slashmap bucket
     handler: analysis.handler
     events:
       - http:
           path: analysis
-          method: post
+          method: get
           cors:
             origin: '*'
             maxAge: 86400
