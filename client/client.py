@@ -1,14 +1,15 @@
-import camera
+#import camera
 import settings
 import logging
 
 logger = logging.getLogger(__name__)
+logger.setLevel("DEBUG")
 
 def main():
     logger.info("STARTING CLIENT...")
 
     logger.info("SNAPPING PICTURE...")
-    camera.takePicture()
+    #camera.takePicture()
 
     logger.info(f"PICTURE SAVED TO {settings.IMG_PATH}...") 
 
