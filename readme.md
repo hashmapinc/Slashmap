@@ -14,7 +14,7 @@
 
 ## Overview
 
-Parking space abuse takes place when a person who does not have a disability parks in a handicap space or when placards are loaned out to those that are not disabled. Unfortunately, tickets or any repercussions for parking space abuse is rarely levied and therefore it continues to happen. In a recent May 2018 study (https://www.prnewswire.com/news-releases/handicap-accessible-parking-abuse-witnessed-by-74-percent-of-participants-in-new-us-survey-300641570.html) handicap accessible parking abuse was witnessed by 74 percent of the participants in the survey. 
+Parking space abuse takes place when a person who does not have a disability parks in a handicap space or when placards are loaned out to those that are not disabled. Unfortunately, tickets or any repercussions for parking space abuse is rarely levied and therefore it continues to happen. In a [recent May 2018 study](https://www.prnewswire.com/news-releases/handicap-accessible-parking-abuse-witnessed-by-74-percent-of-participants-in-new-us-survey-300641570.html) handicap accessible parking abuse was witnessed by 74 percent of the participants in the survey. 
 
 While overall building accessibility has improved (inside the building) in recent years, if handicapped parking outside the building is misused or abused, that building remains inaccessible. 
 
