@@ -14,14 +14,18 @@ def main():
 
     # loop
     while True:
-        camera.takePicture()
+        try:
+            camera.takePicture()
 
-        s3_filename = slashmap.getS3Filename()
-        slashmap.uploadToS3(settings.IMG_PATH, s3_filename)
-        logging.info(f"Getting analysis for {s3_filename}")
-        analysis = slashmap.getAnalysis(s3_filename)
-        printAnalysis(analysis)
+            s3_filename = slashmap.getS3Filename()
+            slashmap.uploadToS3(settings.IMG_PATH, s3_filename)
+            logging.info(f"Getting analysis for {s3_filename}")
+            analysis = slashmap.getAnalysis(s3_filename)
+            printAnalysis(analysis)
 
+        except Exception as e:
+            logging.error(f"Error in main loop: {e}")
+        
         time.sleep(settings.LOOP_TIMEOUT)
 
 
