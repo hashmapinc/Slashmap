@@ -4,7 +4,7 @@ import logging, time
 import slashmap
 
 def main():
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.INFO)
     logging.info("STARTING CLIENT...")
 
     # loop
