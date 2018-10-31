@@ -1,4 +1,4 @@
-#import camera
+import camera
 import settings
 import logging, time
 import slashmap
