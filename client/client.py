@@ -9,8 +9,6 @@ def main():
 
     # loop
     while True:
-        time.sleep(30)
-
         logging.info("SNAPPING PICTURE...")
         camera.takePicture()
         logging.info(f"PICTURE SAVED TO {settings.IMG_PATH}...") 
@@ -21,6 +19,8 @@ def main():
         logging.info(f"Getting analysis for {s3_filename}...")
         analysis = slashmap.getAnalysis(s3_filename)
         [print(f"label: {label['Name']}, conf: {label['Confidence']}") for label in analysis]
+
+        time.sleep(30)
 
 
 if __name__ == '__main__':
