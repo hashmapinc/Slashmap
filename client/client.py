@@ -20,7 +20,7 @@ def main():
         analysis = slashmap.getAnalysis(s3_filename)
         [print(f"label: {label['Name']}, conf: {label['Confidence']}") for label in analysis]
 
-        time.sleep(30)
+        time.sleep(settings.LOOP_TIMEOUT)
 
 
 if __name__ == '__main__':
