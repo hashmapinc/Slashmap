@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 requests = "*"
 picamera = "*"
+"boto3" = "*"
+art = "*"
 
 [dev-packages]
 
