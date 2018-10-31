@@ -1,8 +1,6 @@
 import boto3, requests
 import time, json, logging
 import settings
-from botocore import UNSIGNED
-from botocore.client import Config
 
 logger = logging.getLogger(__name__)
 logger.setLevel("DEBUG")
@@ -15,7 +13,7 @@ def getS3Filename():
 
 def uploadToS3(filepath, s3_filename):
     # Create an S3 client
-    s3 = boto3.client('s3', config=Config(signature_version=UNSIGNED))
+    s3 = boto3.client('s3')
     # Uploads the given file using a managed uploader, which will split up large
     # files automatically and upload parts in parallel.
     s3.upload_file(filepath, settings.S3_BUCKETNAME, getS3Key(s3_filename))
