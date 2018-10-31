@@ -7,3 +7,5 @@ API = {
 }
 VIOLATION_MSG = "VIOLATION"
 OK_MSG = "ALL CLEAR"
+DEEP_LEARNING_URL = "http://ec2-52-15-109-73.us-east-2.compute.amazonaws.com:5000/predict"
+MATCHING_LABELS = set(["CAR", "CARS", "LICENSE", "LICENSE PLATE", "TRUCK", "AUTO", "AUTOMOBILE", "AUTOMOBILES"])

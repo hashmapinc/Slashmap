@@ -34,5 +34,15 @@ def getAnalysis(s3_filename):
 
 def validate(analysis):
     labels = [label['Name'].upper() for label in analysis]
-    [art.tprint(label) for label in labels]
+    [print(label) for label in labels]
+    print('\n')
+
+    if not set(labels).isdisjoint(settings.MATCHING_LABELS):
+        with open(settings.IMG_PATH, "rb") as f:
+            r = requests.post(settings.DEEP_LEARNING_URL, files={'image': f})
+            response = json.loads(r)
+            if response == "not wheelchair":
+                art.tprint(settings.VIOLATION_MSG)
+            else:
+                art.tprint(settings.OK_MSG)
 
