@@ -40,7 +40,7 @@ def validate(analysis):
     if not set(labels).isdisjoint(settings.MATCHING_LABELS):
         with open(settings.IMG_PATH, "rb") as f:
             r = requests.post(settings.DEEP_LEARNING_URL, files={'image': f})
-            response = json.loads(r)
+            response = json.loads(r.content)
             if response == "not wheelchair":
                 art.tprint(settings.VIOLATION_MSG)
             else:
