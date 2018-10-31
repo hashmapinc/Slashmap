@@ -1,9 +1,11 @@
-import boto3, requests
+import boto3, requests, art
 import time, json, logging
 import settings
 
 logger = logging.getLogger(__name__)
 logger.setLevel("DEBUG")
+
+art.set_default(font="small slant")
 
 def getS3Key(s3_filename):
     return f"uncategorized/{s3_filename}"
@@ -29,3 +31,8 @@ def getAnalysis(s3_filename):
     except Exception as e:
         logging.error(f"Error getting analysis: {e}")
         return []
+
+def validate(analysis):
+    labels = [label['Name'].upper() for label in analysis]
+    [art.tprint(label) for label in labels]
+

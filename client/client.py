@@ -3,11 +3,6 @@ import settings
 import logging, time
 import slashmap
 
-def printAnalysis(analysis):
-    print("\n\n")
-    [print(f"label: {label['Name']}, conf: {label['Confidence']}") for label in analysis]
-    print("\n\n")
-
 def main():
     logging.basicConfig(level=logging.INFO)
     logging.info("STARTING CLIENT...")
@@ -21,7 +16,9 @@ def main():
             slashmap.uploadToS3(settings.IMG_PATH, s3_filename)
             logging.info(f"Getting analysis for {s3_filename}")
             analysis = slashmap.getAnalysis(s3_filename)
-            printAnalysis(analysis)
+            print("\n")
+            slashmap.validate(analysis)
+            print("\n")
 
         except Exception as e:
             logging.error(f"Error in main loop: {e}")
